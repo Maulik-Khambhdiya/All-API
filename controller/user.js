@@ -1,13 +1,14 @@
 let API = require("../model/user");
 
-exports.createData = async (req, res) => {
 
-
+exports.addData = async (req, res) => {
+  //console.log("=====");
   try {
     let data = req.body;
-     console.log('==>>>>',data);
     data.profile = req.file.filename;
-    const createData = await API.create(req.body);
+    //console.log("--> ", data);
+
+    const createData = await API.create(data);
     res.status(201).json({
       status: "success",
       message: "data create successfully",

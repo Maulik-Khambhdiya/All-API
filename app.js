@@ -13,9 +13,10 @@ mongoose
     console.log(error);
   });
 
-var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var apiRouter = require("./routes/signup");
+var studentApiRouter = require("./routes/sCrud");
+var markApiRouter=require("./routes/mark")
 
 var app = express();
 
@@ -29,9 +30,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/signup", apiRouter);
+app.use("/student", studentApiRouter);
+app.use('/mark',markApiRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

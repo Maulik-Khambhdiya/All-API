@@ -1,12 +1,30 @@
-let API = require("../model/user");
+const API = require("../model/student");
+
+// exports.createData= async(req,res)=>{
+//     let data=req.body
+
+//     try {
+//         const addData= await API.create(data)
+//         res.status(201).json({
+//           status:"success",
+//           message:"data created successfully",
+//           data:addData
+//         })
+
+//     } catch (error) {
+//         res.status(404).json({
+//             status:"failed",
+//             message:error.message
+//         })
+//     }
+// }
 
 exports.addData = async (req, res) => {
   //console.log("=====");
   try {
     let data = req.body;
-    data.profile = req.file.filename;
+    
     //console.log("--> ", data);
-
     const createData = await API.create(data);
     res.status(201).json({
       status: "success",
@@ -23,11 +41,11 @@ exports.addData = async (req, res) => {
 
 exports.viewData = async (req, res) => {
   try {
-    const allData = await API.find();
+    const viewData = await API.find();
     res.status(200).json({
       status: "success",
       message: "data found successfully",
-      data: allData,
+      data: viewData,
     });
   } catch (error) {
     res.status(404).json({
@@ -82,7 +100,6 @@ exports.editData = async (req, res) => {
     });
   }
 };
-
 
 
 

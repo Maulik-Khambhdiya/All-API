@@ -17,9 +17,10 @@ const upload = multer({ storage: storage });
 
 let AC = require("../controller/user");
 
-// apiRouter.post("/", upload.single("profile"), AC.createData);
-apiRouter.get("/", AC.viewData);
-
 apiRouter.post("/createData", upload.single("profile"), AC.addData);
+apiRouter.get("/", AC.viewData);
+apiRouter.delete('/:id',AC.deleteData)
+apiRouter.patch('/:id',AC.editData)
+
 
 module.exports = apiRouter;

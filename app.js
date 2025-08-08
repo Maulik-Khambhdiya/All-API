@@ -17,6 +17,7 @@ var usersRouter = require("./routes/users");
 var apiRouter = require("./routes/signup");
 var studentApiRouter = require("./routes/sCrud");
 var markApiRouter=require("./routes/mark")
+var loginRouter=require("./routes/loginCrud")
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use("/users", usersRouter);
 app.use("/signup", apiRouter);
 app.use("/student", studentApiRouter);
 app.use('/mark',markApiRouter)
+app.use("/login",loginRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

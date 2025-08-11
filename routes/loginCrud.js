@@ -6,8 +6,4 @@ let AC=require('../controller/user')
 loginApi.post('/addLoginData',AC.loginUser)
 
 
-
-
-
-
 module.exports=loginApi

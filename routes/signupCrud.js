@@ -1,5 +1,6 @@
 const express = require("express");
 const apiRouter = express.Router();
+const AM = require('../middleware/auth')
 
 const multer = require("multer");
 
@@ -18,9 +19,9 @@ const upload = multer({ storage: storage });
 let AC = require("../controller/user");
 
 apiRouter.post("/createData", upload.single("profile"), AC.addData); // http://localhost:3000/signup/createData
-apiRouter.get("/", AC.viewData);
-apiRouter.delete('/:id',AC.deleteData)
-apiRouter.patch('/:id',AC.editData)
+apiRouter.get("/",AM.authCheck,AC.viewData);
+apiRouter.delete('/:id',AM.authCheck,AC.deleteData)
+apiRouter.patch('/:id',AM.authCheck,AC.editData)
 
 
 module.exports = apiRouter;

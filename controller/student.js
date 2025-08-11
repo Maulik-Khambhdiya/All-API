@@ -1,23 +1,5 @@
 const API = require("../model/student");
 
-// exports.createData= async(req,res)=>{
-//     let data=req.body
-
-//     try {
-//         const addData= await API.create(data)
-//         res.status(201).json({
-//           status:"success",
-//           message:"data created successfully",
-//           data:addData
-//         })
-
-//     } catch (error) {
-//         res.status(404).json({
-//             status:"failed",
-//             message:error.message
-//         })
-//     }
-// }
 
 exports.addData = async (req, res) => {
   //console.log("=====");

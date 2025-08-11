@@ -14,9 +14,9 @@ mongoose
   });
 
 var usersRouter = require("./routes/users");
-var apiRouter = require("./routes/signup");
-var studentApiRouter = require("./routes/sCrud");
-var markApiRouter=require("./routes/mark")
+var apiRouter = require("./routes/signupCrud");
+var studentApiRouter = require("./routes/studentCrud");
+var markApiRouter=require("./routes/markCrud")
 var loginRouter=require("./routes/loginCrud")
 
 var app = express();

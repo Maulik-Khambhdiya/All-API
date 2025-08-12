@@ -1,7 +1,8 @@
 const mongoose= require('mongoose');
  const markSchema= mongoose.Schema({
     name:{
-        type:String,
+        type:mongoose.Types.ObjectId,
+        ref:"students", // from student model
         required:[true,"Enter Name"]
     },
 

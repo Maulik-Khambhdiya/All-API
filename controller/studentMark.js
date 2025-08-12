@@ -22,7 +22,7 @@ exports.createData=async(req,res)=>{
 
 exports.viewData = async (req, res) => {
   try {
-    const viewData = await API.find();
+    const viewData = await API.find().populate("name");
     res.status(200).json({
       status: "success",
       message: "data found successfully",

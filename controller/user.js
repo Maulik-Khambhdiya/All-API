@@ -98,7 +98,7 @@ exports.loginUser = async (req, res) => {
     );
 
     if (!passVerify) throw new Error("Invalid password");
-    const token = jwt.sign({ id: emailVerify }, "surat");
+    const token = jwt.sign({ id: emailVerify._id }, "surat");
 
     res.status(200).json({
       status: "Success",
